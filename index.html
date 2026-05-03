@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WVCF6WMH');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W1W8JZ6FQH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W1W8JZ6FQH');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Daily Sin — Make Ayurveda Sexy Again</title>
@@ -140,7 +155,7 @@ body.site-active{overflow-y:auto;}
 #reveal-layer{position:absolute;inset:0;z-index:1;background:var(--bg);display:flex;align-items:center;justify-content:center;}
 #reveal-logo{width:min(200px,50vw);opacity:0;transition:opacity 0.8s ease;mix-blend-mode:lighten;}
 #reveal-logo.show{opacity:1;}
-#scratch-canvas{position:absolute;inset:0;z-index:2;transition:opacity 0.5s ease;}
+#scratch-canvas{position:absolute;inset:0;z-index:2;transition:opacity 0.5s ease;opacity:0;}
 #wellness{position:absolute;top:0;left:0;right:0;z-index:3;pointer-events:none;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:18dvh 24px 0;background:transparent;transition:opacity 0.5s ease;}
 #wellness-headline{font-family:'Playfair Display',serif;font-weight:300;font-size:clamp(28px,6vw,48px);color:#1a1a1a;line-height:1.35;text-align:center;max-width:min(560px,85vw);margin-bottom:clamp(16px,2.5vw,24px);opacity:0;animation:wFade 0.6s ease 1.4s forwards;}
 @keyframes wFade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
@@ -154,8 +169,8 @@ body.site-active{overflow-y:auto;}
 #ring-emoji{font-size:58px;position:relative;z-index:5;pointer-events:none;line-height:1;}
 #ring-text-svg{position:absolute;inset:0;width:204px;height:204px;overflow:visible;pointer-events:none;z-index:6;}
 #ring-btn-outer.pressing #inner-btn{background:radial-gradient(circle at 38% 32%, #252525 0%, #0f0f0f 40%, #060606 75%, #020202 100%);box-shadow:0 0 0 1px rgba(255,255,255,0.1),0 4px 16px rgba(0,0,0,0.6),0 0 24px rgba(41,151,74,0.45),0 0 60px rgba(41,151,74,0.2),inset 0 1px 0 rgba(255,255,255,0.08);transform:scale(0.96);}
-@keyframes shake{0%,100%{transform:translate(0,0);}15%{transform:translate(-2px,-1px);}30%{transform:translate(2px,1px);}45%{transform:translate(-1px,2px);}60%{transform:translate(2px,-1px);}75%{transform:translate(-2px,0);}90%{transform:translate(2px,0);}}
-body.shaking #scratch-canvas,body.shaking #wellness{animation:shake 0.1s linear infinite;}
+@keyframes shake{0%{transform:translate(0,0) rotate(0deg);}10%{transform:translate(-5px,-3px) rotate(-0.4deg);}20%{transform:translate(5px,3px) rotate(0.4deg);}30%{transform:translate(-4px,4px) rotate(-0.3deg);}40%{transform:translate(4px,-4px) rotate(0.3deg);}50%{transform:translate(-5px,2px) rotate(-0.4deg);}60%{transform:translate(5px,-2px) rotate(0.4deg);}70%{transform:translate(-3px,4px) rotate(-0.2deg);}80%{transform:translate(3px,-3px) rotate(0.2deg);}90%{transform:translate(-4px,1px) rotate(-0.3deg);}100%{transform:translate(0,0) rotate(0deg);}}
+body.shaking #scratch-canvas,body.shaking #wellness{animation:shake 0.07s linear infinite;}
 .logo-clone{position:fixed;z-index:600;pointer-events:none;object-fit:contain;}
 
 /* ══ MAIN SITE ══ */
@@ -171,8 +186,27 @@ body.shaking #scratch-canvas,body.shaking #wellness{animation:shake 0.1s linear 
 .nav-social a{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);transition:border-color 0.2s,transform 0.15s;}
 .nav-social a:hover{border-color:var(--green);transform:scale(1.05);}
 .nav-social svg{width:15px;height:15px;fill:rgba(255,255,255,0.5);}
-.nav-cta{font-family:'Outfit',sans-serif;font-weight:500;font-size:13px;letter-spacing:0.04em;color:#fff;background:var(--green);padding:10px 22px;border-radius:var(--pill);text-decoration:none;transition:background 0.2s,transform 0.15s;white-space:nowrap;}
-.nav-cta:hover{background:var(--green-lt);transform:translateY(-1px);}
+.nav-cta{
+  font-family:'Outfit',sans-serif;font-weight:500;font-size:13px;
+  letter-spacing:0.04em;color:#fff;
+  background:linear-gradient(135deg,#2eaa52 0%,#29974A 45%,#1f7a3a 100%);
+  padding:10px 22px;border-radius:var(--pill);text-decoration:none;
+  white-space:nowrap;position:relative;overflow:hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.16),
+    0 0 20px rgba(41,151,74,0.2),
+    0 3px 12px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.2),
+    inset 0 -1px 0 rgba(0,0,0,0.2);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  transition:transform 0.15s,box-shadow 0.2s;
+}
+.nav-cta::before{
+  content:'';position:absolute;top:0;left:-8%;width:55%;height:50%;
+  background:linear-gradient(135deg,rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.05) 60%,transparent 100%);
+  border-radius:var(--pill) var(--pill) 0 0;pointer-events:none;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(255,255,255,0.22),0 0 28px rgba(41,151,74,0.32),0 4px 16px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.25),inset 0 -1px 0 rgba(0,0,0,0.18);}
 
 /* Scroll reveal */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.72s ease,transform 0.72s ease;}
@@ -184,8 +218,43 @@ body.shaking #scratch-canvas,body.shaking #wellness{animation:shake 0.1s linear 
 .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);z-index:1;}
 .hero-text{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:clamp(20px,3vw,32px);padding:0 clamp(20px,5vw,80px);}
 .hero-headline{font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(32px,5vw,64px);color:#fff;line-height:1.15;max-width:820px;}
-.cta-pill{display:inline-block;background:var(--green);color:#fff;font-family:'Outfit',sans-serif;font-weight:500;font-size:clamp(14px,1.8vw,16px);padding:15px 44px;border-radius:var(--pill);text-decoration:none;border:none;cursor:pointer;letter-spacing:0.04em;transition:background 0.2s,transform 0.15s;box-shadow:0 0 40px rgba(41,151,74,0.22);}
-.cta-pill:hover{background:var(--green-lt);transform:translateY(-2px);}
+.cta-pill{
+  display:inline-block;
+  background:linear-gradient(135deg,#2eaa52 0%,#29974A 45%,#1f7a3a 100%);
+  color:#fff;font-family:'Outfit',sans-serif;font-weight:500;
+  font-size:clamp(14px,1.8vw,16px);padding:15px 44px;
+  border-radius:var(--pill);text-decoration:none;border:none;cursor:pointer;
+  letter-spacing:0.04em;position:relative;overflow:hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.18),
+    0 0 40px rgba(41,151,74,0.28),
+    0 4px 20px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    inset 0 -1px 0 rgba(0,0,0,0.25);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  transition:transform 0.15s,box-shadow 0.2s;
+}
+.cta-pill::before{
+  content:'';position:absolute;
+  top:0;left:-10%;width:55%;height:50%;
+  background:linear-gradient(135deg,rgba(255,255,255,0.22) 0%,rgba(255,255,255,0.06) 60%,transparent 100%);
+  border-radius:var(--pill) var(--pill) 0 0;pointer-events:none;
+}
+.cta-pill::after{
+  content:'';position:absolute;
+  bottom:0;right:-5%;width:45%;height:45%;
+  background:linear-gradient(315deg,rgba(255,255,255,0.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-pill:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.22),
+    0 0 55px rgba(41,151,74,0.38),
+    0 6px 28px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.28),
+    inset 0 -1px 0 rgba(0,0,0,0.2);
+}
 .cta-pill:active{transform:scale(0.97);}
 
 /* ── WHY ── */
@@ -857,8 +926,20 @@ body.shaking #scratch-canvas,body.shaking #wellness{animation:shake 0.1s linear 
 #tweaks-mount{position:fixed;z-index:9999;bottom:24px;right:24px;pointer-events:none;}
 #tweaks-mount > *{pointer-events:auto;}
 </style>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "wl7795pn0d");
+</script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVCF6WMH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ══ PRANK STAGE ══ -->
 <div id="prank-stage">
@@ -933,7 +1014,7 @@ body.shaking #scratch-canvas,body.shaking #wellness{animation:shake 0.1s linear 
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-text">
       <h1 class="hero-headline reveal">It's Amla Candy in a Cigarette Box.</h1>
-      <a class="cta-pill reveal" href="#razorpay-section">Commit the Sin</a>
+      <a class="cta-pill reveal" href="#why">See what's inside</a>
     </div>
   </section>
 
@@ -1097,7 +1178,13 @@ body.shaking #scratch-canvas,body.shaking #wellness{animation:shake 0.1s linear 
     <div class="buy-inner">
       <p class="buy-title reveal">Ayurveda didn't fail you. It just showed up in the wrong packaging.</p>
       <div id="razorpay-embed">
-        <p class="rp-placeholder">Payment widget coming soon</p>
+        <iframe
+  src="https://rzp.io/rzp/DP9F2Ab"
+  style="width:100%;max-width:480px;min-height:520px;border:none;border-radius:8px;display:block;"
+  loading="lazy"
+  title="Buy The Daily Sin — Amla Candy"
+  allow="payment"
+></iframe>
       </div>
     </div>
   </section>
@@ -1780,8 +1867,8 @@ let revealed  = false;
 let frameTick = 0;
 let scratchPhase = 0;
 var scratchYArr = [0, 0, 0];
-const PHASE_STEP = 0.45;
-const SUBSTEPS   = 8;
+const PHASE_STEP = 0.75;
+const SUBSTEPS   = 14;
 
 function getCurveCount() { return W <= 768 ? 2 : 1; }
 
@@ -1789,9 +1876,10 @@ function resize() {
   W = scratchEl.width  = window.innerWidth;
   H = scratchEl.height = window.innerHeight;
   const isMobile = W <= 768;
-  brushR = Math.round(H * (isMobile ? 0.13 : 0.11));
+  brushR = Math.round(H * (isMobile ? 0.091 : 0.11));
   buildBrush();
   drawSurface();
+  scratchEl.style.opacity = '1';
   const n = getCurveCount();
   for (let i = 0; i < n; i++) scratchYArr[i] = brushR + (H / n) * i;
 }
@@ -1842,15 +1930,17 @@ function scratchFrame() {
   for (let c = 0; c < n; c++) {
     const phaseOffset = Math.PI * c;
     for (let s = 0; s < SUBSTEPS; s++) {
-      const p = scratchPhase + phaseOffset + PHASE_STEP * (s / SUBSTEPS);
-      const x = brushR + (Math.sin(p) * 0.5 + 0.5) * (W - 2 * brushR);
-      const yOff = brushR * 0.06 * (s / SUBSTEPS);
+      const p  = scratchPhase + phaseOffset + PHASE_STEP * (s / SUBSTEPS);
+      const p2 = p * 2.3 + phaseOffset * 0.7;
+      const x  = brushR + ((Math.sin(p) * 0.72 + Math.sin(p2) * 0.28) * 0.5 + 0.5) * (W - 2 * brushR);
+      const yJitter = (Math.random() - 0.5) * brushR * 0.35;
+      const yOff    = brushR * 0.06 * (s / SUBSTEPS) + yJitter;
       eraseBrushAt(x, scratchYArr[c] + yOff);
     }
-    scratchYArr[c] += brushR * (W <= 768 ? 0.028 : 0.055) + Math.random() * brushR * 0.01;
+    scratchYArr[c] += brushR * (W <= 768 ? 0.055 : 0.09) + (Math.random() - 0.3) * brushR * 0.04;
     if (scratchYArr[c] > H + brushR) scratchYArr[c] = brushR;
   }
-  scratchPhase += PHASE_STEP * (0.85 + Math.random() * 0.3);
+  scratchPhase += PHASE_STEP * (1.4 + Math.random() * 0.5);
   frameTick++;
   if (frameTick % 15 === 0) checkCoverage();
   requestAnimationFrame(scratchFrame);
@@ -1877,11 +1967,14 @@ function endScratch() { lastX = null; lastY = null; }
 
 ringBtnOuter.addEventListener('mousemove', e => { scratchAt(e.clientX, e.clientY); });
 ringBtnOuter.addEventListener('mouseleave', endScratch);
-ringBtnOuter.addEventListener('touchmove', e => {
+document.addEventListener('touchmove', e => {
+  if (!scratchOn || revealed) return;
   e.preventDefault();
   const t = e.touches[0];
   scratchAt(t.clientX, t.clientY);
 }, { passive: false });
+document.addEventListener('touchend', endScratch, { passive: true });
+document.addEventListener('touchcancel', endScratch, { passive: true });
 
 function checkCoverage() {
   if (revealed) return;
